@@ -4,7 +4,6 @@ import validation from '@gqlapp/validation-common-react';
 import contact from '@gqlapp/contact-server-ts';
 import cookies from '@gqlapp/cookies-server-ts';
 import post from '@gqlapp/post-server-ts';
-import upload from '@gqlapp/upload-server-ts';
 import subscription from '@gqlapp/payments-server-ts';
 import mailer from '@gqlapp/mailer-server-ts';
 import graphqlTypes from '@gqlapp/graphql-types-server-ts';
@@ -24,7 +23,6 @@ const modules: ServerModule = new ServerModule(
   post,
   subscription,
   user,
-  upload,
   contact,
   mailer,
   rest,
