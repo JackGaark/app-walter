@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { translate } from '@gqlapp/i18n-client-react';
-import { Button, HeaderTitle, IconButton, primary } from '@gqlapp/look-client-react-native';
+import { HeaderTitle, IconButton } from '@gqlapp/look-client-react-native';
 import ClientModule from '@gqlapp/module-client-react-native';
 
 import Post from './containers/Post';
@@ -18,24 +18,24 @@ const withI18N = (Component, props) => {
   return <WithI18N {...props} />;
 };
 
-const PostListHeaderRight = ({ navigation, t }) => {
-  return (
-    <View style={styles.addButtonContainer}>
-      <Button style={styles.addButton} size={'small'} type={primary} onPress={() => navigation.navigate('PostAdd')}>
-        {t('list.btn.add')}
-      </Button>
-    </View>
-  );
-};
-PostListHeaderRight.propTypes = {
-  navigation: PropTypes.object,
-  t: PropTypes.func
-};
+// const PostListHeaderRight = ({ navigation, t }) => {
+//   return (
+//     <View style={styles.addButtonContainer}>
+//       <Button style={styles.addButton} size={'small'} type={primary} onPress={() => navigation.navigate('PostAdd')}>
+//         {t('list.btn.add')}
+//       </Button>
+//     </View>
+//   );
+// };
+// PostListHeaderRight.propTypes = {
+//   navigation: PropTypes.object,
+//   t: PropTypes.func
+// };
 
 class PostListScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     headerTitle: withI18N(HeaderTitle, { style: 'subTitle', i18nKey: 'list.subTitle' }),
-    headerRight: withI18N(PostListHeaderRight, { navigation }),
+    //headerRight: withI18N(PostListHeaderRight, { navigation }),
     headerLeft: (
       <IconButton iconName="menu" iconSize={32} iconColor="#0275d8" onPress={() => navigation.openDrawer()} />
     ),
